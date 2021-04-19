@@ -1,17 +1,35 @@
 <template>
-  <div class="home">
-    <HelloWorld msg="Superhero Encyclopedia under construction"/>
-  </div>
+  <v-container>
+    <v-row class="text-center">
+      <v-col class="mb-4">
+        <h1 class="display-2 font-weight-bold mb-3">
+          Site under construction
+        </h1>
+        <p class="subheading font-weight-regular">
+          Developed by Santiago Flores <br> Email: santiagofloresmeza@gmail.com
+        </p>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
 export default Vue.extend({
-  name: 'Home',
-  components: {
-    HelloWorld,
-  },
-});
+  name: 'HomePage',
+  data: () => ({
+
+  })
+})
 </script>
+
+<style>
+h1 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+</style>
