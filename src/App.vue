@@ -5,19 +5,15 @@
       color="primary"
       dark
     >
-      <div class="d-flex align-center">
+      <div>
         <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
+          alt="Logo"
           min-width="100"
           :src="require('@/assets/Images/logo.png')"
-          width="170"
+          width="250"
         />
       </div>
-
       <v-spacer></v-spacer>
-
       <v-btn
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
         target="_blank"
