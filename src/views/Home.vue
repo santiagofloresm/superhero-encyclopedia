@@ -23,7 +23,7 @@ export default Vue.extend({
   }),
   created() {
     this.$store.dispatch('getAllSuperheros')
-  }
+  },
 })
 </script>
 
