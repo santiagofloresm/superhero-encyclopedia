@@ -26,6 +26,18 @@
     <v-main>
       <Home/>
     </v-main>
+    <v-bottom-navigation
+      app
+      background-color="primary"
+      dark
+      absolute
+      height="80"
+    >
+      <p>Site under construction<br>
+      Created by Santiago Flores<br>
+      Email: santiagofloresmeza@gmail.com</p>
+    </v-bottom-navigation>
+    <v-responsive height="350"></v-responsive>
   </v-app>
 </template>
 
