@@ -17,10 +17,13 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'HomePage',
+  name: 'Home',
   data: () => ({
 
-  })
+  }),
+  created() {
+    this.$store.dispatch('getAllSuperheros')
+  },
 })
 </script>
 

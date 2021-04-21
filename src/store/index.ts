@@ -1,15 +1,17 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
+import Vuex, {StoreOptions} from 'vuex'
+import {RootState} from "@/store/types";
+import { superheros } from "@/store/superheros";
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store: StoreOptions<RootState> = {
   state: {
-  },
-  mutations: {
-  },
-  actions: {
+    version: '1.0'
   },
   modules: {
+    superheros,
   }
-})
+}
+
+export default new Vuex.Store<RootState>(store);
