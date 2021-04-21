@@ -4,7 +4,10 @@ import {RootState} from "@/store/types";
 import Superhero from "@/store/superheros/model";
 
 export const getters: GetterTree<SuperherosState, RootState> = {
-    getAllSuperHeros(state): Array<Superhero> {
+    getAllSuperheros(state): Array<Superhero> {
         return state.superheros;
+    },
+    getSuperhero: (state) => (id: number) : unknown | undefined => {
+        return state.superheros.find(superhero => superhero.id === id);
     }
 }
