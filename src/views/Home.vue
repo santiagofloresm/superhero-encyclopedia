@@ -1,38 +1,37 @@
 <template>
-  <v-container>
-    <v-row class="text-center">
-      <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">
-          Site under construction
-        </h1>
-        <p class="subheading font-weight-regular">
-          Developed by Santiago Flores <br> Email: santiagofloresmeza@gmail.com
-        </p>
-      </v-col>
-    </v-row>
+  <v-container fluid>
+      <v-row class="home-cards text-center">
+        <SuperheroHomeCard v-for="id in getIdNumber()" :key="id" :superhero="getSuperhero(id)"></SuperheroHomeCard>
+      </v-row>
   </v-container>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import SuperheroHomeCard from "@/components/UI/SuperheroHomeCard.vue";
 
 export default Vue.extend({
   name: 'Home',
-  data: () => ({
-
-  }),
+  components: {
+    SuperheroHomeCard,
+  },
+  data: () => ({}),
   created() {
     this.$store.dispatch('getAllSuperheros')
   },
+  methods: {
+    getIdNumber() {
+      return [1, 2, 3, 4, 5, 6]
+    },
+    getSuperhero(id: number) {
+      return this.$store.getters.getSuperhero(id);
+    }
+  }
 })
 </script>
 
 <style>
-h1 {
-  color: white;
-}
-
-p {
-  color: white;
+.home-cards {
+  justify-content: space-around;
 }
 </style>
