@@ -7,7 +7,7 @@ export const getters: GetterTree<SuperherosState, RootState> = {
     getAllSuperheros(state): Array<Superhero> {
         return state.superheros;
     },
-    getSuperhero: (state) => (id: number) : unknown | undefined => {
-        return state.superheros.find(superhero => superhero.id === id);
+    getSuperhero: (state) => (id: number) : Superhero => {
+        return state.superheros.find(superhero => superhero.id === id) ?? new Superhero();
     }
 }

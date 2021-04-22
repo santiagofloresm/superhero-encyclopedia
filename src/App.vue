@@ -45,7 +45,6 @@
       Created by Santiago Flores<br>
       Email: santiagofloresmeza@gmail.com</p>
     </v-bottom-navigation>
-    <v-responsive height="350"></v-responsive>
   </v-app>
 </template>
 

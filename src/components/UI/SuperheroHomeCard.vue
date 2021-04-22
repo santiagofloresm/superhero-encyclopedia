@@ -1,13 +1,11 @@
 <template>
-  <v-card height="200" width="200">
-    <v-flex>
-      <v-row>
-        <v-col sm="12">
-          <p>{{ superhero.name }}</p>
-        </v-col>
-      </v-row>
-    </v-flex>
+  <v-hover v-slot="{ hover }">
+  <v-card :elevation="hover ? 22 : 1" width="200">
+    <v-img class="align-end" :src="superhero.images.md">
+      <p class="superhero-name" v-text="superhero.name"></p>
+    </v-img>
   </v-card>
+  </v-hover>
 </template>
 
 <script lang="ts">
@@ -16,25 +14,23 @@ import Vue from 'vue';
 export default Vue.extend({
   name: 'SuperheroHomeCard',
   props: {
-    id: {
-      type: Number,
+    superhero: {
+      type: Object,
       required: true
     }
   },
   data: () => ({
 
   }),
-  computed: {
-    superhero(): [] {
-      if (this.$store.getters.getSuperhero(this.id) !== undefined) {
-        return this.$store.getters.getSuperhero(this.id);
-      }
-      return [];
-    }
-  }
 })
 </script>
 
 <style>
-
+.superhero-name {
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bolder;
+  background-color: black;
+  display: inline-block;
+}
 </style>

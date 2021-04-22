@@ -1,10 +1,8 @@
 <template>
-  <v-container>
-    <v-row class="text-center">
-      <v-col class="mb-4">
-        <SuperheroHomeCard :id=1></SuperheroHomeCard>
-      </v-col>
-    </v-row>
+  <v-container fluid>
+      <v-row class="home-cards text-center">
+        <SuperheroHomeCard v-for="id in getIdNumber()" :key="id" :superhero="getSuperhero(id)"></SuperheroHomeCard>
+      </v-row>
   </v-container>
 </template>
 
@@ -17,21 +15,23 @@ export default Vue.extend({
   components: {
     SuperheroHomeCard,
   },
-  data: () => ({
-
-  }),
+  data: () => ({}),
   created() {
     this.$store.dispatch('getAllSuperheros')
   },
+  methods: {
+    getIdNumber() {
+      return [1, 2, 3, 4, 5, 6]
+    },
+    getSuperhero(id: number) {
+      return this.$store.getters.getSuperhero(id);
+    }
+  }
 })
 </script>
 
 <style>
-h1 {
-  color: white;
-}
-
-p {
-  color: white;
+.home-cards {
+  justify-content: space-around;
 }
 </style>

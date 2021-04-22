@@ -7,9 +7,8 @@ import {SuperherosMutations} from "@/store/superheros/mutations";
 const BaseUrl = 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/'
 
 export const actions: ActionTree<SuperherosState, RootState> = {
-    getAllSuperheros({ commit }): void {
-        axios.get(BaseUrl + 'all.json').then(response => {
-            commit(SuperherosMutations.SET_SUPERHEROS, response.data)
-        })
+    async getAllSuperheros({ commit }): Promise<any> {
+        const response = await axios.get(BaseUrl + 'all.json')
+        commit(SuperherosMutations.SET_SUPERHEROS, response.data)
     }
 }
