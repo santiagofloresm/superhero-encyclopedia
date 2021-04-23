@@ -12,31 +12,29 @@
 <script lang="ts">
 import Vue from 'vue';
 import SuperheroHomeCard from "@/components/UI/SuperheroHomeCard.vue";
+import {mapGetters} from "vuex";
 
 export default Vue.extend({
   name: 'Home',
   components: {
     SuperheroHomeCard,
   },
-  props: {
-    superheros: {
-      type: Array,
-      required: true
-    }
-  },
   data: () => ({}),
-  // methods: {
-  //   getSuperhero(id: number) {
-  //     return this.$store.getters.getSuperhero(id);
-  //   }
-  // }
+  computed: {
+    ...mapGetters(['filterSuperheros', 'getSearchValue']),
+    superheros: {
+      get: function() {
+        return this.filterSuperheros(this.getSearchValue);
+      }
+    }
+  }
 })
 </script>
 
 <style>
 .home-cards {
   justify-content: space-around;
-  padding-top: 3%;
-  padding-bottom: 3%;
+  padding-top: 8%;
+  padding-bottom: 8%;
 }
 </style>

@@ -7,7 +7,8 @@ import { actions } from "@/store/superheros/actions";
 import Superhero from "@/store/superheros/model";
 
 const state: SuperherosState = {
-    superheros: Array<Superhero>()
+    superheros: Array<Superhero>(),
+    searchValue: ''
 }
 
 export const superheros: Module<SuperherosState, RootState> = {
