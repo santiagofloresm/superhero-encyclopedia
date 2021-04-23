@@ -31,6 +31,7 @@ export default Vue.extend({
   font-size: 25px;
   font-weight: bolder;
   background-color: black;
+  color: white;
   display: inline-block;
 }
 </style>

@@ -33,5 +33,6 @@ export default Vue.extend({
 <style>
 .home-cards {
   justify-content: space-around;
+  padding-top: 5%;
 }
 </style>
