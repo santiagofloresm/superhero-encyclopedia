@@ -10,5 +10,8 @@ export const actions: ActionTree<SuperherosState, RootState> = {
     async getAllSuperheros({ commit }): Promise<any> {
         const response = await axios.get(BaseUrl + 'all.json')
         commit(SuperherosMutations.SET_SUPERHEROS, response.data)
+    },
+    setSearchValue({ commit }, searchValue: string): void {
+        commit(SuperherosMutations.SET_SEARCH, searchValue)
     }
 }

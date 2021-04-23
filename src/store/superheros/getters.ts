@@ -2,12 +2,14 @@ import {GetterTree} from "vuex";
 import {SuperherosState} from "@/store/superheros/types";
 import {RootState} from "@/store/types";
 import Superhero from "@/store/superheros/model";
-// import {superheros} from "@/store/superheros/index";
 
 export const getters: GetterTree<SuperherosState, RootState> = {
-    getAllSuperheros(state): Array<Superhero> {
-        return state.superheros;
+    getSearchValue(state): string {
+        return state.searchValue
     },
+    // getAllSuperheros(state): Array<Superhero> {
+    //     return state.superheros;
+    // },
     getSuperhero: (state) => (id: number) : Superhero | undefined => {
         return state.superheros.find(superhero => superhero.id === id) ?? undefined;
     },
