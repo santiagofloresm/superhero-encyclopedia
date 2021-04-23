@@ -32,7 +32,7 @@
       </v-btn>
     </v-app-bar>
     <v-main>
-      <Home/>
+      <Home :superheros="getSuperheros" />
     </v-main>
     <v-bottom-navigation
       app
@@ -50,18 +50,28 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { mapGetters } from "vuex";
 import Home from './views/Home.vue'
 
 export default Vue.extend({
   name: 'App',
-
   components: {
     Home
   },
-
   data: () => ({
     searchValue: ''
   }),
+  created() {
+    this.$store.dispatch('getAllSuperheros')
+  },
+  computed: {
+    ...mapGetters(['filterSuperheros']),
+    getSuperheros() {
+      // console.log(this.filterSuperheros(this.searchValue))
+      return this.filterSuperheros(this.searchValue)
+    //   return this.$store.getters.filterSuperheros(this.searchValue);
+    }
+  }
 });
 </script>
 

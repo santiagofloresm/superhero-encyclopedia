@@ -1,8 +1,11 @@
 <template>
   <v-container fluid>
+    <div v-if="superheros.length !== 0">
       <v-row class="home-cards text-center">
-        <SuperheroHomeCard v-for="id in getIdNumber()" :key="id" :superhero="getSuperhero(id)"></SuperheroHomeCard>
+        <SuperheroHomeCard v-for="superhero in superheros" :key="superhero.id" :superhero="superhero"></SuperheroHomeCard>
       </v-row>
+    </div>
+    <div v-else>Loading</div>
   </v-container>
 </template>
 
@@ -15,24 +18,25 @@ export default Vue.extend({
   components: {
     SuperheroHomeCard,
   },
-  data: () => ({}),
-  created() {
-    this.$store.dispatch('getAllSuperheros')
-  },
-  methods: {
-    getIdNumber() {
-      return [1, 2, 3, 4, 5, 6]
-    },
-    getSuperhero(id: number) {
-      return this.$store.getters.getSuperhero(id);
+  props: {
+    superheros: {
+      type: Array,
+      required: true
     }
-  }
+  },
+  data: () => ({}),
+  // methods: {
+  //   getSuperhero(id: number) {
+  //     return this.$store.getters.getSuperhero(id);
+  //   }
+  // }
 })
 </script>
 
 <style>
 .home-cards {
   justify-content: space-around;
-  padding-top: 5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 </style>
