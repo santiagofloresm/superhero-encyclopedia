@@ -1,6 +1,8 @@
 <template>
   <v-hover v-slot="{ hover }">
-  <v-card :elevation="hover ? 22 : 1" width="200">
+  <v-card
+      :elevation="hover ? 22 : 1" width="200"
+      @click="$router.push({ name: 'Detailed', params: { name: superhero.name.replace(' ', '-').toLowerCase() }})">
     <v-img class="align-end" :src="superhero.images.md">
       <p class="superhero-name" v-text="superhero.name"></p>
     </v-img>
