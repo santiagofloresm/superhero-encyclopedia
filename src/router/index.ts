@@ -33,7 +33,12 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   console.log(to)
-  document.title = `${ process.env.VUE_APP_TITLE } - ${ to.name }`
+  if (to.params.title) {
+    document.title = `${ process.env.VUE_APP_TITLE } - ${ to.params.title }`
+  }
+  else {
+    document.title = `${ process.env.VUE_APP_TITLE } - ${ to.name }`
+  }
   next()
 })
 
