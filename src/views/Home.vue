@@ -34,7 +34,7 @@ export default Vue.extend({
 <style>
 .home-cards {
   justify-content: space-around;
-  padding-top: 8%;
-  padding-bottom: 8%;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 </style>
