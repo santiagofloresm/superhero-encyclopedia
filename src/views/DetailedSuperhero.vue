@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Detailed test</h1>
+    <h1>{{ superhero.name }}</h1>
   </div>
 </template>
 
@@ -8,7 +8,13 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'DetailedSuperhero'
+  name: 'DetailedSuperhero',
+  props: {
+    superhero: {
+      type: Object,
+      required: true
+    }
+  }
 })
 
 </script>

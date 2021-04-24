@@ -21,6 +21,7 @@ const routes: Array<RouteConfig> = [
   {
     path: '/:name',
     name: 'Detailed',
+    props: true,
     component: () => import('../views/DetailedSuperhero.vue')
   }
 ]
@@ -32,7 +33,6 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  console.log(to)
   if (to.params.title) {
     document.title = `${ process.env.VUE_APP_TITLE } - ${ to.params.title }`
   }

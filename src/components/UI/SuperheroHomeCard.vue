@@ -2,8 +2,7 @@
   <v-hover v-slot="{ hover }">
   <v-card
       :elevation="hover ? 22 : 1" width="200"
-      @click="$router.push({ name: 'Detailed',
-      params: { name: superhero.name.replace(' ', '-').toLowerCase(), title: superhero.name }})">
+      @click="$router.push({ name: 'Detailed', params: { superhero: superhero, name: superhero.name.replaceAll(' ', '-').toLowerCase(), title: superhero.name} })">
     <v-img class="align-end" :src="superhero.images.md">
       <p class="superhero-name" v-text="superhero.name"></p>
     </v-img>
