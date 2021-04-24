@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ superhero.name }}</h1>
+    <h1>{{ $route.params.name }}</h1>
   </div>
 </template>
 
@@ -9,12 +9,6 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'DetailedSuperhero',
-  props: {
-    superhero: {
-      type: Object,
-      required: true
-    }
-  }
 })
 
 </script>
