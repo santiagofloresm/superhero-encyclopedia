@@ -12,12 +12,67 @@
           </v-col>
           <v-col md="8">
             <p class="superhero-top-name">{{ superhero.name }}</p>
-              <StatsProgressBar name="Intelligence" :value="superhero.powerstats.intelligence" color="indigo accent-4"></StatsProgressBar>
-              <StatsProgressBar name="Strength" :value="superhero.powerstats.strength" color="red accent-4"></StatsProgressBar>
-              <StatsProgressBar name="Speed" :value="superhero.powerstats.speed" color="amber accent-3"></StatsProgressBar>
-              <StatsProgressBar name="Durability" :value="superhero.powerstats.durability" color="purple accent-4"></StatsProgressBar>
-              <StatsProgressBar name="Power" :value="superhero.powerstats.power" color="green accent-4"></StatsProgressBar>
-              <StatsProgressBar name="Combat" :value="superhero.powerstats.combat" color="orange accent-4"></StatsProgressBar>
+            <StatsProgressBar name="Intelligence" :value="superhero.powerstats.intelligence" color="indigo accent-4"></StatsProgressBar>
+            <StatsProgressBar name="Strength" :value="superhero.powerstats.strength" color="red accent-4"></StatsProgressBar>
+            <StatsProgressBar name="Speed" :value="superhero.powerstats.speed" color="amber accent-3"></StatsProgressBar>
+            <StatsProgressBar name="Durability" :value="superhero.powerstats.durability" color="purple accent-4"></StatsProgressBar>
+            <StatsProgressBar name="Power" :value="superhero.powerstats.power" color="green accent-4"></StatsProgressBar>
+            <StatsProgressBar name="Combat" :value="superhero.powerstats.combat" color="orange accent-4"></StatsProgressBar>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-spacer></v-spacer>
+          <v-col md="5">
+            <p class="superhero-info-title">Full Name:
+              <span class="superhero-info-body">{{ superhero.biography.fullName }}</span>
+            </p>
+            <p class="superhero-info-title">Aliases:
+              <span class="superhero-info-body" v-for="alias in superhero.biography.aliases" :key="alias">{{ alias }}, </span>
+            </p>
+            <p class="superhero-info-title">Alter egos:
+              <span class="superhero-info-body">{{ superhero.biography.alterEgos }}</span>
+            </p>
+            <p class="superhero-info-title">Group affiliation:
+              <span class="superhero-info-body">{{ superhero.connections.groupAffiliation }}</span>
+            </p>
+            <p class="superhero-info-title">Relatives:
+              <span class="superhero-info-body">{{ superhero.connections.relatives }}</span>
+            </p>
+            <p class="superhero-info-title">Publisher:
+              <span class="superhero-info-body">{{ superhero.biography.publisher }}</span>
+            </p>
+            <p class="superhero-info-title">First appearance:
+              <span class="superhero-info-body">{{ superhero.biography.firstAppearance }}</span>
+            </p>
+          </v-col>
+          <v-col md="5">
+            <p class="superhero-info-title">Race:
+              <span class="superhero-info-body">{{ superhero.appearance.race }}</span>
+            </p>
+            <p class="superhero-info-title">Place of birth:
+              <span class="superhero-info-body">{{ superhero.biography.placeOfBirth }}</span>
+            </p>
+            <p class="superhero-info-title">Gender:
+              <span class="superhero-info-body">{{ superhero.appearance.gender }}</span>
+            </p>
+            <p class="superhero-info-title">Eye color:
+              <span class="superhero-info-body">{{ superhero.appearance.eyeColor }}</span>
+            </p>
+            <p class="superhero-info-title">Hair color:
+              <span class="superhero-info-body">{{ superhero.appearance.hairColor }}</span>
+            </p>
+            <p class="superhero-info-title">Height:
+              <span class="superhero-info-body">{{ superhero.appearance.height[1] }}</span>
+            </p>
+            <p class="superhero-info-title">Weight:
+              <span class="superhero-info-body">{{ superhero.appearance.weight[1] }}</span>
+            </p>
+            <p class="superhero-info-title">Occupation:
+              <span class="superhero-info-body">{{ superhero.work.occupation }}</span>
+            </p>
+            <p class="superhero-info-title">Base:
+              <span class="superhero-info-body">{{ superhero.work.base }}</span>
+            </p>
           </v-col>
         </v-row>
       </v-flex>
@@ -63,5 +118,18 @@ export default Vue.extend({
   margin-top: 1%;
   margin-bottom: 1%;
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.superhero-info-title {
+  font-size: 22px;
+  color: yellow;
+  font-weight: bolder;
+  margin: 0 !important;
+}
+
+.superhero-info-body {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
 }
 </style>
