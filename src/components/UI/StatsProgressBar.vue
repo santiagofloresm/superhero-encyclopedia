@@ -5,7 +5,7 @@
         :color="color"
         height="13"
         :value="value"
-        striped></v-progress-linear>
+        ></v-progress-linear>
   </span>
 </template>
 

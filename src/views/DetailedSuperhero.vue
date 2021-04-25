@@ -12,13 +12,12 @@
           </v-col>
           <v-col md="8">
             <p class="superhero-top-name">{{ superhero.name }}</p>
-<!--            <StatsProgressBar v-for="stat in stats" :key="stat.name" :name="stat.name" :value="stat.value" :color="stat.color"></StatsProgressBar>-->
-              <StatsProgressBar name="Intelligence" :value="superhero.powerstats.intelligence" color="blue"></StatsProgressBar>
-              <StatsProgressBar name="Strength" :value="superhero.powerstats.strength" color="red"></StatsProgressBar>
-              <StatsProgressBar name="Speed" :value="superhero.powerstats.speed" color="purple"></StatsProgressBar>
-              <StatsProgressBar name="Durability" :value="superhero.powerstats.durability" color="orange"></StatsProgressBar>
-              <StatsProgressBar name="Power" :value="superhero.powerstats.power" color="green"></StatsProgressBar>
-              <StatsProgressBar name="Combat" :value="superhero.powerstats.combat" color="pink"></StatsProgressBar>
+              <StatsProgressBar name="Intelligence" :value="superhero.powerstats.intelligence" color="indigo accent-4"></StatsProgressBar>
+              <StatsProgressBar name="Strength" :value="superhero.powerstats.strength" color="red accent-4"></StatsProgressBar>
+              <StatsProgressBar name="Speed" :value="superhero.powerstats.speed" color="amber accent-3"></StatsProgressBar>
+              <StatsProgressBar name="Durability" :value="superhero.powerstats.durability" color="purple accent-4"></StatsProgressBar>
+              <StatsProgressBar name="Power" :value="superhero.powerstats.power" color="green accent-4"></StatsProgressBar>
+              <StatsProgressBar name="Combat" :value="superhero.powerstats.combat" color="orange accent-4"></StatsProgressBar>
           </v-col>
         </v-row>
       </v-flex>
@@ -36,13 +35,6 @@ export default Vue.extend({
   components: {
     StatsProgressBar,
   },
-  // data: () => ({
-  //   stats: [{
-  //     name: 'Intelligence',
-  //     value: this.superhero.powerstats.intelligence,
-  //     color: "blue"
-  //   }]
-  // }),
   computed: {
     ...mapGetters(['getSuperheroByName']),
     superhero: {
