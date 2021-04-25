@@ -1,11 +1,10 @@
 <template>
   <span class="superhero-stats">{{ name }}
     <v-progress-linear
-        class="superhero-progress"
         :color="color"
         height="13"
         :value="value"
-        striped></v-progress-linear>
+        ></v-progress-linear>
   </span>
 </template>
 
@@ -36,9 +35,5 @@ export default Vue.extend({
   font-size: 27px;
   font-weight: bold;
   color: white;
-}
-
-.superhero-progress {
-  /*width: 50px;*/
 }
 </style>
