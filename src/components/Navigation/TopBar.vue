@@ -4,14 +4,14 @@
       color="primary"
       dark
   >
-    <div>
+    <router-link to="/">
       <v-img
           alt="Logo"
           min-width="100"
           :src="require('@/assets/Images/logo.png')"
           width="250"
       />
-    </div>
+    </router-link>
     <v-spacer></v-spacer>
     <v-text-field
         hide-details
