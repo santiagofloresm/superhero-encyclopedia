@@ -117,12 +117,12 @@ export default Vue.extend({
 .detailed-container {
   margin-top: 1%;
   margin-bottom: 1%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .superhero-info-title {
   font-size: 22px;
-  color: yellow;
+  color: #0da877;
   font-weight: bolder;
   margin: 0 !important;
 }
