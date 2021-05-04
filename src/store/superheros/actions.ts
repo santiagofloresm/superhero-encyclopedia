@@ -9,6 +9,8 @@ const BaseUrl = 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/'
 export const actions: ActionTree<SuperherosState, RootState> = {
     async getAllSuperheros({ commit }): Promise<any> {
         const response = await axios.get(BaseUrl + 'all.json')
+        // Had to manually change the name of one character because there are two Batman
+        response.data[51].name = "Batman Beyond"
         commit(SuperherosMutations.SET_SUPERHEROS, response.data)
     },
     setSearchValue({ commit }, searchValue: string): void {
