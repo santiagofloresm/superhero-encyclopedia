@@ -12,8 +12,7 @@
         height="80"
     >
       <p>Site under construction<br>
-        Created by Santiago Flores<br>
-        Email: santiagofloresmeza@gmail.com</p>
+        Created by Santiago Flores</p>
     </v-bottom-navigation>
   </v-app>
 </template>
