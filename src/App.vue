@@ -4,16 +4,16 @@
     <v-main>
       <router-view></router-view>
     </v-main>
-    <v-bottom-navigation
-        app
-        background-color="primary"
-        dark
-        absolute
-        height="80"
-    >
-      <p>Site under construction<br>
-        Created by Santiago Flores</p>
-    </v-bottom-navigation>
+<!--    <v-bottom-navigation-->
+<!--        app-->
+<!--        background-color="primary"-->
+<!--        dark-->
+<!--        absolute-->
+<!--        height="80"-->
+<!--    >-->
+<!--      <p>Site under construction<br>-->
+<!--        Created by Santiago Flores</p>-->
+<!--    </v-bottom-navigation>-->
   </v-app>
 </template>
 

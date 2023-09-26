@@ -23,6 +23,7 @@
           hide-details
           label="Search for a superhero"></v-text-field>
       <v-spacer></v-spacer>
+      <v-btn>Log In</v-btn>
 
     </v-app-bar>
 
